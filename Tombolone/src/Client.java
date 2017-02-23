@@ -1,9 +1,11 @@
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.SWT;
 
 public class Client {
 
-	protected Shell shell;
+	protected Shell shlLaTuaCartellina;
 
 	/**
 	 * Launch the application.
@@ -24,9 +26,9 @@ public class Client {
 	public void open() {
 		Display display = Display.getDefault();
 		createContents();
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlLaTuaCartellina.open();
+		shlLaTuaCartellina.layout();
+		while (!shlLaTuaCartellina.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
@@ -37,9 +39,17 @@ public class Client {
 	 * Create contents of the window.
 	 */
 	protected void createContents() {
-		shell = new Shell();
-		shell.setSize(450, 300);
-		shell.setText("SWT Application");
+		shlLaTuaCartellina = new Shell();
+		shlLaTuaCartellina.setSize(576, 517);
+		shlLaTuaCartellina.setText("La tua cartellina");
+		
+		Button btnRicevi = new Button(shlLaTuaCartellina, SWT.NONE);
+		btnRicevi.setBounds(10, 10, 115, 37);
+		btnRicevi.setText("Ricevi numeri");
+		
+		Button btnInvia = new Button(shlLaTuaCartellina, SWT.NONE);
+		btnInvia.setBounds(489, 432, 61, 37);
+		btnInvia.setText("VEDI");
 
 	}
 
